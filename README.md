@@ -12,3 +12,9 @@
     pick a neutral color, primary, and secondary
 
     reverseColor will generate a ligth them we then passed to material UI 
+
+## Redux Toolkit
+- create slices for every features necessary for the app
+    - theme
+
+## React Router
