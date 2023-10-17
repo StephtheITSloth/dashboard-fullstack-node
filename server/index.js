@@ -29,4 +29,13 @@ app.use('management', managementRoutes)
 app.use('/sales', salesRoutes)
 
 
-const port = process.env.PORT || 9000
+//MONGOOSE SETUP
+const PORT = process.env.PORT || 9000
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server listening on Port: ${PORT}`)
+    })
+}).catch(error => `${error} did not work`)
