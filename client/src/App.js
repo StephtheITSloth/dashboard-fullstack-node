@@ -3,7 +3,7 @@ import {createTheme} from "@mui/material/styles";
 import { themeSettings } from "theme";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "scenes/dashboard"
 import Layout from "scenes/layout"
 
@@ -18,7 +18,7 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route element={<Layout />}>
-              {/* <Route path="/" element={<Navigate to="/dashboard" replace/>}/> */}
+              <Route path="/" element={<Navigate to="/dashboard" replace/>}/>
               <Route path="/dashboard" element={<Dashboard />} />
             </Route>
           </Routes>
