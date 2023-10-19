@@ -7,7 +7,7 @@ import profileImage from "assets/profile-pic.jpg"
 import { AppBar, useTheme, Toolbar, IconButton, InputBase, Button, Box, Typography, Menu, MenuItem } from '@mui/material'
 
 
-const Navbar = () => {
+const Navbar = ({setIsSidebarOpen, isSidebarOpen}) => {
     const dispatch = useDispatch()
     const theme = useTheme()
   return (
@@ -20,23 +20,22 @@ const Navbar = () => {
     >
         <Toolbar sx={{justifyContent: "space-between"}}>
             {/* LEFT SIDE */}
-            <FlexBetween>
-                <IconButton onClick={() => console.log('open/close sidebar')}>
-                    <MenuIcon />
-                </IconButton>
-                <FlexBetween
-                    backgroundColor={theme.palette.background.alt}
-                    borderRadius="9px"
-                    gap="3rem"
-                    p="0.1rem 1.5rem"
-                >
-                    <InputBase placeholder="Search..." />
-                    <IconButton>
-                        <Search />
-                    </IconButton>
-
-                </FlexBetween>
-            </FlexBetween>
+        <FlexBetween>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+            <MenuIcon />
+          </IconButton>
+          <FlexBetween
+            backgroundColor={theme.palette.background.alt}
+            borderRadius="9px"
+            gap="3rem"
+            p="0.1rem 1.5rem"
+          >
+            <InputBase placeholder="Search..." />
+            <IconButton>
+              <Search />
+            </IconButton>
+          </FlexBetween>
+        </FlexBetween>
 
             {/* RIGHT SIDE */}
             <FlexBetween gap="1.5rem">
