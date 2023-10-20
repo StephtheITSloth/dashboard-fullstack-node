@@ -7,9 +7,16 @@ import profileImage from "assets/profile-pic.jpg"
 import { AppBar, useTheme, Toolbar, IconButton, InputBase, Button, Box, Typography, Menu, MenuItem } from '@mui/material'
 
 
-const Navbar = ({setIsSidebarOpen, isSidebarOpen}) => {
+const Navbar = ({user, setIsSidebarOpen, isSidebarOpen}) => {
     const dispatch = useDispatch()
     const theme = useTheme()
+
+    //just because of menu dropdowm
+    const [anchorEl, setAnchorEl] = useState(null)
+    const isOpen = Boolean(anchorEl)
+    const handleClick = (event) => setAnchorEl(event.currentTarget)
+    const handleClose = () => setAnchorEl(null)
+
   return (
     <AppBar
     sx={{
@@ -50,7 +57,7 @@ const Navbar = ({setIsSidebarOpen, isSidebarOpen}) => {
                     <SettingsOutlined sx={{ fontSize: "25px" }} />
                 </IconButton>
 
-                {/* <FlexBetween>
+                <FlexBetween>
                     <Button
                     onClick={handleClick}
                     sx={{
@@ -97,7 +104,7 @@ const Navbar = ({setIsSidebarOpen, isSidebarOpen}) => {
                     >
                     <MenuItem onClick={handleClose}>Log Out</MenuItem>
                     </Menu>
-                </FlexBetween> */}
+                </FlexBetween>
             </FlexBetween>
         </Toolbar>
     </AppBar>

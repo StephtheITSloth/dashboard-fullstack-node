@@ -22,3 +22,6 @@
     - Get Query by id steps: state(userID) from store => react toolkit query => backend routes with params => resource
 
 ## React Router
+
+## Data Model
+- Implement relationship with noSQL by refering to document (check out mongoose doc)
