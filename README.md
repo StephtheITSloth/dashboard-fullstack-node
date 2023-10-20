@@ -17,4 +17,8 @@
 - create slices for every features necessary for the app
     - theme
 
+- React toolkit query to create api calls
+    - Checkout client/state/api.js and client/index.js for setup
+    - Get Query by id steps: state(userID) from store => react toolkit query => backend routes with params => resource
+
 ## React Router
