@@ -10,6 +10,9 @@ import generalRoutes from "./routes/general.js"
 import salesRoutes from "./routes/sales.js"
 import managementRoutes from "./routes/management.js"
 
+// data insertion
+import User from "./models/User.js"
+import {dataUser} from "./data/index.js"
 
 //CONFIGURATIONS
 dotenv.config()
@@ -38,4 +41,6 @@ mongoose.connect(process.env.MONGO_URI, {
     app.listen(PORT, () => {
         console.log(`Server listening on Port: ${PORT}`)
     })
+
+    User.insertMany(dataUser)
 }).catch(error => `${error} did not work`)
