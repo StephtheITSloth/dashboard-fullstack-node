@@ -23,5 +23,8 @@
 
 ## React Router
 
-## Data Model
+## Data Model!
+
+[Screenshot 2023-10-20 050101](https://github.com/StephtheITSloth/dashboard-fullstack-node/assets/77164683/7815c0a9-6e9d-43be-bb09-c13267410372)
+
 - Implement relationship with noSQL by refering to document (check out mongoose doc)
